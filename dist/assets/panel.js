@@ -1,0 +1,1 @@
+import{c as t,j as e}from"./tailwind.js";function s(){return e.jsxs("div",{className:"p-3 text-sm text-zinc-900",children:[e.jsx("div",{className:"font-medium mb-2",children:"Tailwind 编辑器（DevTools）"}),e.jsx("div",{className:"text-xs text-zinc-600",children:"打开页面并使用扩展图标或快捷方式切换检查模式。"})]})}const o=t(document.getElementById("root"));o.render(e.jsx(s,{}));

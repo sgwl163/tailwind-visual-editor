@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Tailwind 可视化编辑器",
+  "description": "在页面上可视化检查和编辑 Tailwind CSS 类名，实时预览。",
+  "version": "0.1.0",
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_title": "Tailwind 编辑器"
+  },
+  "background": {
+    "service_worker": "assets/background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["assets/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/*.css",
+        "assets/*.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "devtools_page": "src/panel.html"
+}
